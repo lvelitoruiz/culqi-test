@@ -12,7 +12,7 @@ import PaginationE from '../components/PaginationE.vue'
     <side-bar />
     <div class="w-full md:h-screen">
       <header-s />
-      <div class="pt-8 px-6 pb-8 md:pb-0">
+      <div class="pt-8 px-6 pb-8 md:pb-0 max-h-[calc(100vh-111px)] overflow-auto">
         <div class="bg-white p-6 rounded-2xl">
           <div class="flex flex-col md:flex-row gap-5 md:items-center justify-between mb-6">
             <div>
@@ -22,7 +22,7 @@ import PaginationE from '../components/PaginationE.vue'
               </p>
             </div>
             <div class="flex items-center gap-[20px]">
-              <div class="w-[100px] h-[34px] bg-[#F8F8F8] animate-pulse rounded-full loading"></div>
+              <!-- <div class="w-[100px] h-[34px] bg-[#F8F8F8] animate-pulse rounded-full loading"></div> -->
               <div class="flex items-center gap-[20px] w-full md:w-fit">
                 <button
                   class="h-[48px] w-full md:w-fit px-6 border text-[#111827] border-[#111827] flex items-center justify-center gap-2 rounded-[10px] text-sm font-bold"
@@ -40,11 +40,11 @@ import PaginationE from '../components/PaginationE.vue'
             </div>
           </div>
           <div class="mb-6">
-            <div class="flex items-center gap-4 loading">
+            <!-- <div class="flex items-center gap-4 loading">
               <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
               <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
               <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
-            </div>
+            </div> -->
             <div class="flex md:items-center flex-col md:flex-row gap-5">
               <div class="w-full md:w-8/12">
                 <search-input />
