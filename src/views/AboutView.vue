@@ -66,6 +66,125 @@ import PaginationE from '../components/PaginationE.vue'
             </div>
           </div>
         </div>
+        <div class="bg-white p-6 rounded-2xl">
+          <div class="flex flex-col md:flex-row gap-5 md:items-center justify-between mb-6">
+            <div>
+              <h3 class="text-[#111827] font-['Manrope'] text-2xl font-bold mb-2">Empleados</h3>
+            </div>
+            <div class="flex items-center gap-[20px]">
+              <div class="w-[100px] h-[34px] bg-[#F8F8F8] animate-pulse rounded-full loading"></div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="flex items-center gap-4 loading">
+              <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
+              <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
+              <div class="w-full h-[34px] bg-[#F8F8F8] animate-pulse rounded-full"></div>
+            </div>
+          </div>
+          <div>
+            <div class="overflow-auto">
+              <div class="min-w-[800px]">
+                <div>
+                  <div class="flex items-center h-[56px] bg-[#FAFAFA] rounded-[10px] loading">
+                    <div class="w-2/12 h-full flex items-center px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                    <div class="w-2/12 h-full flex items-center px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                    <div class="w-2/12 h-full flex items-center px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                    <div class="w-2/12 h-full flex items-center px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                    <div class="w-2/12 h-full flex items-center px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                    <div class="w-2/12 h-full flex items-center justify-end gap-[10px] px-4">
+                      <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="overflow-auto max-h-[calc(100vh-499px)]">
+                  <div>
+                    <div class="flex items-center h-[56px] border-b border-[#F1F2F4] loading">
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center justify-end gap-[10px] px-4">
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center h-[56px] border-b border-[#F1F2F4] loading">
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center justify-end gap-[10px] px-4">
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center h-[56px] border-b border-[#F1F2F4] loading">
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center px-4">
+                        <div class="w-full h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                      <div class="w-2/12 h-full flex items-center justify-end gap-[10px] px-4">
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                        <div class="w-[20px] h-[20px] bg-[#F1F2F4] animate-pulse rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
