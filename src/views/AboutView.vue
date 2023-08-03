@@ -12,7 +12,7 @@ import CommonConsts from '@/constants'
 let loading = ref(true);
 let page = ref(1);
 let pageSize = ref(CommonConsts.PAGE_SIZE);
-let employees = ref([]);
+let employees: any[] = [];
 
 const api = useHttpApi();
 
@@ -28,9 +28,7 @@ const getEmployees = async () => {
 
   try {
     const response = await api.createGetQuery(link, bearerToken, dataObject);
-    console.log(response);
-    employees.value = response.data;
-    console.log(employees.value);
+    employees.values = response.data;
     loading.value = false;
   } catch (error) {
     console.log(error);
@@ -84,8 +82,7 @@ onMounted(getEmployees)
           <div>
             <div class="overflow-auto">
               <div class="min-w-[800px]">
-                <EmployeeTable />
-                
+                <EmployeeTable :employee-list="employees" />
               </div>
             </div>
             <div class="flex flex-col gap-5 md:flex-row items-center justify-between pt-6">

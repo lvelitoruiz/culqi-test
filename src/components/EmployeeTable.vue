@@ -35,7 +35,7 @@
             </p>
           </td>
           <td class=" h-full px-4">
-            <p class="text-xs text-[#111827] font-['Manrope'] font-medium">{{ employee.cuenta }}</p>
+            <p class="text-xs text-[#111827] font-['Manrope'] font-medium">{{ employee.estadoCuenta }}</p>
           </td>
           <td class="h-full flex items-center justify-end gap-[10px] px-4 pt-3">
             <button
@@ -61,26 +61,13 @@
 </template>
 
 <script setup lang="ts">
-const employees = [
-  {
-    id: 1,
-    nombre: 'Pristia Candra',
-    correo: 'lincoln@unpixel.com',
-    cargo: 'UI UX Designer',
-    departamento: 'Team Product',
-    oficina: 'Unpixel Office',
-    cuenta: 'Activada'
-  },
-  {
-    id: 2,
-    nombre: 'Pristia Candra',
-    correo: 'lincoln@unpixel.com',
-    cargo: 'UI UX Designer',
-    departamento: 'Team Product',
-    oficina: 'Unpixel Office',
-    cuenta: 'Activada'
-  }
-]
+
+const props = defineProps({
+  employeeList: Array
+})
+
+const employees = props.employeeList?.values;
+
 </script>
  
   
