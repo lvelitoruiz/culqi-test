@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full lg:h-screen">
-    <div class="w-full h-[calc(100%-362px)]">
+  <div class="w-full lg:h-screen overflow-hidden">
+    <div class="w-full" style="height: calc(100% - 304px);">
       <img
         class="w-full h-full object-cover hidden lg:block"
         src="../assets/img/login.png"
