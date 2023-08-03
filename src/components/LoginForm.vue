@@ -75,7 +75,7 @@ const login = async (event: { preventDefault: () => void; }) => {
     const response = await api.createPostQuery(link, dataObject);
     hasError.value = false;
     localStorage.setItem('token', response.data.token);
-    localStorage.setItem('user', response.data.user);
+    localStorage.setItem('user', JSON.stringify(response.data.user));
     router.push('/about');
   } catch (error) {
     hasError.value = true;

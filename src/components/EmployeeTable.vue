@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="h-[56px] border-b border-[#F1F2F4]" v-for="employee in employees" :key="employee.id">
+        <tr class="h-[56px] border-b border-[#F1F2F4]" v-for="employee in employeeList" :key="employee.id">
           <td class="px-4">
             <p class="text-xs text-[#111827] font-['Manrope'] font-medium">
               {{ employee.nombre }}
@@ -61,12 +61,20 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, watch, watchEffect } from 'vue';
 
 const props = defineProps({
-  employeeList: Array
-})
+  employeeList: {
+    type: Array as () => any[], // Add type assertion for the prop
+    required: true,
+  },
+});
 
-const employees = props.employeeList?.values;
+let employees: any[];
+
+watch(props, ()=> {
+  employees = props.employeeList;
+})
 
 </script>
  

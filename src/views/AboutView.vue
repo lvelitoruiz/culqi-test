@@ -8,11 +8,16 @@ import PaginationE from '../components/PaginationE.vue'
 import { onMounted, ref } from 'vue'
 import { useHttpApi } from '@/stores/useApiWeb';
 import CommonConsts from '@/constants'
+import router from '@/router'
 
 let loading = ref(true);
 let page = ref(1);
-let pageSize = ref(CommonConsts.PAGE_SIZE);
-let employees: any[] = [];
+let pageSize = ref(10);
+let employees: any;
+let pagesNumber = ref(1);
+let total = ref(1);
+
+let dataLoaded = ref(false);
 
 const api = useHttpApi();
 
@@ -24,18 +29,32 @@ const getEmployees = async () => {
 
   const bearerToken = localStorage.getItem('token') as string;
 
-  console.log(bearerToken);
-
   try {
     const response = await api.createGetQuery(link, bearerToken, dataObject);
-    employees.values = response.data;
+    employees = response.data;
+    total.value = response.total;
+    pagesNumber.value = Math.ceil(response.total / pageSize.value);
     loading.value = false;
   } catch (error) {
     console.log(error);
   }
 };
 
-onMounted(getEmployees)
+const handleActualpage = async (pageNew: number) => {
+  dataLoaded.value = false;
+  page.value = pageNew;
+  await getEmployees();
+  dataLoaded.value = true;
+}
+
+onMounted(async () => {
+  const isSessionActive = localStorage.getItem('token');
+  if(isSessionActive === null) { 
+    router.push('/');
+  }
+  await getEmployees()
+  dataLoaded.value = true;
+})
 </script>
 
 <template>
@@ -55,14 +74,12 @@ onMounted(getEmployees)
             <div class="flex items-center gap-[20px]">
               <div class="flex items-center gap-[20px] w-full md:w-fit">
                 <button
-                  class="h-[48px] w-full md:w-fit px-6 border text-[#111827] border-[#111827] flex items-center justify-center gap-2 rounded-[10px] text-sm font-bold"
-                >
+                  class="h-[48px] w-full md:w-fit px-6 border text-[#111827] border-[#111827] flex items-center justify-center gap-2 rounded-[10px] text-sm font-bold">
                   <span class="material-icons text-[20px]">insert_drive_file</span>
                   <span class="font-['Manrope']">Descargar</span>
                 </button>
                 <button
-                  class="h-[48px] w-full md:w-fit text-white px-6 bg-[#111827] flex items-center justify-center gap-2 rounded-[10px] text-sm font-bold"
-                >
+                  class="h-[48px] w-full md:w-fit text-white px-6 bg-[#111827] flex items-center justify-center gap-2 rounded-[10px] text-sm font-bold">
                   <span class="material-icons text-[20px]">add</span>
                   <span class="font-['Manrope']">Nuevo</span>
                 </button>
@@ -82,11 +99,11 @@ onMounted(getEmployees)
           <div>
             <div class="overflow-auto">
               <div class="min-w-[800px]">
-                <EmployeeTable :employee-list="employees" />
+                <EmployeeTable v-if="dataLoaded" :employee-list="employees" />
               </div>
             </div>
             <div class="flex flex-col gap-5 md:flex-row items-center justify-between pt-6">
-              <pagination-e />
+              <pagination-e :page="page" :pages="pagesNumber" :per-page="pageSize" @custom-event="handleActualpage" />
             </div>
           </div>
         </div>
@@ -214,5 +231,4 @@ onMounted(getEmployees)
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
