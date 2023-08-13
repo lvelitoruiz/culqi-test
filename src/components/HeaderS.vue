@@ -12,6 +12,9 @@
   
 <script setup lang="ts">
 
+import { useAuthStore } from '../stores/authStore';
+
+const authStore = useAuthStore();
 let brev: string;
 
 const getFirstLetters = (input: string): string => {
@@ -20,9 +23,7 @@ const getFirstLetters = (input: string): string => {
   return firstLetters.join('');
 }
 
-let user = JSON.parse(localStorage.getItem('user') || '{}');
-
-console.log(user.nombre);
+let user = JSON.parse(authStore.user);
 
 if(user.nombre !== null && user.nombre!== undefined) {
   brev = getFirstLetters(user.nombre);

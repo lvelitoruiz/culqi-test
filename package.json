@@ -15,7 +15,9 @@
     "axios": "^1.4.0",
     "esbuild-darwin-arm64": "^0.15.18",
     "material-icons": "^1.13.9",
-    "pinia": "^2.1.4",
+    "pinia": "^2.1.6",
+    "pinia-plugin-persist": "^1.0.0",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
@@ -27,6 +29,7 @@
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/test-utils": "^2.4.1",
     "@vue/tsconfig": "^0.4.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",

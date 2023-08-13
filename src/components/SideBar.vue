@@ -10,15 +10,15 @@
             <ul>
               <li>
                 <a class="py-4 flex items-center gap-2" href="">
-                  <span class="text-[#00A19B] material-icons text-[20px]">people_outline</span>
-                  <span class="text-[#00A19B] font-bold font-['Manrope'] text-sm">Empleados</span>
+                  <span class="text-[#00A19B] material-icons text-[20px]">{{ CommonConsts.sidebar.employeeIcon }}</span>
+                  <span class="text-[#00A19B] font-bold font-['Manrope'] text-sm">{{ CommonConsts.sidebar.employee }}</span>
                 </a>
               </li>
               <li>
                 <a class="py-4 flex items-center gap-2" href="">
-                  <span class="text-[#A0AEC0] material-icons text-[20px]">work_outline</span>
+                  <span class="text-[#A0AEC0] material-icons text-[20px]">{{ CommonConsts.sidebar.recruitmentIcon }}</span>
                   <span class="text-[#111827] font-bold font-['Manrope'] text-sm"
-                    >Reclutamiento</span
+                    >{{ CommonConsts.sidebar.recruitment }}</span
                   >
                 </a>
               </li>
@@ -28,8 +28,9 @@
         <div>
           <button
             class="h-[48px] w-full border border-[#111827] font-['Manrope'] rounded-[10px] text-sm font-bold"
+            @click="closeSession"
           >
-            Salir
+            {{ CommonConsts.sidebar.logout }}
           </button>
         </div>
       </div>
@@ -38,7 +39,18 @@
 </template>
 
 <script setup lang="ts">
+import router from '@/router';
+import { useAuthStore } from '../stores/authStore';
+import CommonConsts from '@/constants';
 
+const store = useAuthStore();
+
+
+  const closeSession = () => { 
+    // sessionStorage.clear();
+    store.clearToken();
+    router.push('/');
+  }
 </script>
 
 <style>

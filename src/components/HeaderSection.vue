@@ -14,16 +14,17 @@
       <h2
         class="text-3xl md:text-5xl text-white font-['Manrope'] font-bold tracking-[-0.5px] md:leading-[57.6px] py-6"
       >
-        Dale más power ⚡ a tus empleados hoy 💪
+        {{ CommonConsts.header.title }}
       </h2>
       <p class="text-white md:text-lg font-['Manrope']">
-        Te ayudamos a gestionarlos de manera más sencilla
+        {{ CommonConsts.header.subtitle }}
       </p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import CommonConsts from '@/constants';
 </script>
 
 <style>

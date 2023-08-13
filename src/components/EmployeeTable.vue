@@ -3,16 +3,16 @@
     <table class="w-full">
       <thead>
         <tr class="h-[56px] bg-[#FAFAFA] rounded-[10px]">
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start">Nombre</th>
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start">Nombre cargo</th>
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start">Departamento</th>
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start">Oficina</th>
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start">Cuenta</th>
-          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-end">Acciones</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start" @click="sortingEmployees('nombre')">{{ CommonConsts.table.name }}</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start" @click="sortingEmployees('cargo')">{{ CommonConsts.table.charge }}</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start" @click="sortingEmployees('departamento')">{{ CommonConsts.table.dept }}</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start" @click="sortingEmployees('oficina')">{{ CommonConsts.table.office }}</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-start" @click="sortingEmployees('estadoCuenta')">{{ CommonConsts.table.account }}</th>
+          <th class="text-xs text-[#687588] font-['Manrope'] font-bold px-4 text-end">{{ CommonConsts.table.actions }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="h-[56px] border-b border-[#F1F2F4]" v-for="employee in employeeList" :key="employee.id">
+        <tr class="h-[56px] border-b border-[#F1F2F4]" :class="{ ' bg-blue-200': employee.active }" v-for="employee in employeeList" :key="employee.id">
           <td class="px-4">
             <p class="text-xs text-[#111827] font-['Manrope'] font-medium">
               {{ employee.nombre }}
@@ -41,17 +41,17 @@
             <button
               class="w-[30px] h-[30px] bg-[#27A376] text-white rounded-lg flex items-center justify-center"
             >
-              <span class="material-icons !text-base">visibility</span>
+              <span class="material-icons !text-base">{{ CommonConsts.table.visibility }}</span>
             </button>
             <button
               class="w-[30px] h-[30px] bg-[#2F78EE] text-white rounded-lg flex items-center justify-center"
             >
-              <span class="material-icons !text-base">mode_edit</span>
+              <span class="material-icons !text-base">{{ CommonConsts.table.edit }}</span>
             </button>
             <button
               class="w-[30px] h-[30px] bg-[#E03137] text-white rounded-lg flex items-center justify-center"
             >
-              <span class="material-icons !text-base">delete</span>
+              <span class="material-icons !text-base">{{ CommonConsts.table.delete }}</span>
             </button>
           </td>
         </tr>
@@ -61,20 +61,20 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch, watchEffect } from 'vue';
+import CommonConsts from '@/constants';
 
 const props = defineProps({
   employeeList: {
-    type: Array as () => any[], // Add type assertion for the prop
+    type: Array as () => any[], 
     required: true,
   },
 });
 
-let employees: any[];
+const emit = defineEmits(['sorting-list']);
 
-watch(props, ()=> {
-  employees = props.employeeList;
-})
+const sortingEmployees = (parameter: string) => {
+  emit('sorting-list',parameter);
+};
 
 </script>
  
