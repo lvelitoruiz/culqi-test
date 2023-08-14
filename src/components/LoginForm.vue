@@ -46,8 +46,6 @@ import CommonConsts from '../constants'
 import router from '@/router';
 import { useAuthStore } from '@/stores/authStore';
 
-console.log(CommonConsts);
-
 const store = useAuthStore();
 
 const hasError = ref(false);

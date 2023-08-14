@@ -25,7 +25,6 @@ const selectedValueCarriers = ref(CommonConsts.table.charge);
 
 const changedValue = () => {
   nextTick(() => {
-    console.log(selectedValueCarriers.value);
     emit('activate-cargo',selectedValueCarriers.value);
   });
 }
