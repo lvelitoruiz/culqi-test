@@ -39,8 +39,24 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### You Can test the components 
 
 ```sh
-npm run lint
+npm run test
 ```
+
+ ### Así mismo se han agregado cosas que no fueron pedidas (Aparte del uso de Pinia y además persistencia en el storage) por ejemplo, en base a la data obtenida se obtienen ahora los cargos y permite señalar a las personas con el cargo seleccionado.
+
+ ![Alt text](./src/assets/img/Screen%20Shot%202023-08-14%20at%2010.31.42.png "a title")
+
+### Se puede hacer sorting de los elementos que están en la página actual
+
+ ![Alt text](./src/assets/img/Screen%20Shot%202023-08-14%20at%2010.33.57.png "a title")
+
+ ### Este sorting funciona con los campos: Nombre, Nombre cargo, Departamento y Cuenta
+
+  ![Alt text](./src/assets/img/Screen%20Shot%202023-08-14%20at%2010.34.14.png "a title")
+
+  ### Además de haberse realizado una validación en el login, para desactivar el botón en caso no estén llenos los dos campos de user y pasword
+
+   ![Alt text](./src/assets/img/Screen%20Shot%202023-08-14%20at%2010.37.12.png "a title")
