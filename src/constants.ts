@@ -1,4 +1,4 @@
-const CommonConsts = Object.freeze({
+const CommonConsts = {
     API_URL: "https://fepruebatecnicaculqi-backend-production.up.railway.app",
     sidebar: {
         employeeIcon: "people_outline",
@@ -11,19 +11,19 @@ const CommonConsts = Object.freeze({
         placeholder: "Buscar Empleado",
         searchIcon: "search",
     },
-    pagination: {
-        prev: "chevron_left",
-        next: "chevron_right",
-        control: (perPage: string, total: string) => `Mostrando <strong>1</strong> a <strong>${perPage}</strong> de <strong>${total}</strong> registros`,
-    },
     login: {
         mail: "Correo electrónico",
+        init: "Inicia sesión",
         password: "Contraseña",
         errorIcon: "error_outline",
         error: "Correo electrónico o contraseña incorrectos",
         login: "Iniciar sesión",
         register: `¿Eres nuevo aquí? <a href="" class="text-[#27A376]">Crea una cuenta</a>`,
-        init: "Inicia sesión",
+    },
+    pagination: {
+        prev: "chevron_left",
+        next: "chevron_right",
+        control: (perPage: string, total: string) => `Mostrando <strong>1</strong> a <strong>${perPage}</strong> de <strong>${total}</strong> registros`,
     },
     header: {
         title: "Dale más power ⚡ a tus empleados hoy 💪",
@@ -51,6 +51,6 @@ const CommonConsts = Object.freeze({
         new: "Nuevo",
         newIcon: "add",
     }
-});
+};
 
 export default CommonConsts;

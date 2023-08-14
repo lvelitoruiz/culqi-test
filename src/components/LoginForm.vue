@@ -46,6 +46,8 @@ import CommonConsts from '../constants'
 import router from '@/router';
 import { useAuthStore } from '@/stores/authStore';
 
+console.log(CommonConsts);
+
 const store = useAuthStore();
 
 const hasError = ref(false);
@@ -71,8 +73,6 @@ const login = async (event: { preventDefault: () => void; }) => {
     router.push('/about');
     store.setToken(response.data.token);
     store.setUser(JSON.stringify(response.data.user));
-    // sessionStorage.setItem('token', response.data.token);
-    // sessionStorage.setItem('user', JSON.stringify(response.data.user));
     
   } catch (error) {
     hasError.value = true;

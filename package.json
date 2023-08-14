@@ -9,15 +9,19 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "test": "vitest"
   },
   "dependencies": {
+    "@types/jest": "^29.5.3",
     "axios": "^1.4.0",
     "esbuild-darwin-arm64": "^0.15.18",
+    "jsdom": "^22.1.0",
     "material-icons": "^1.13.9",
     "pinia": "^2.1.6",
     "pinia-plugin-persist": "^1.0.0",
     "pinia-plugin-persistedstate": "^3.2.0",
+    "vitest": "^0.34.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

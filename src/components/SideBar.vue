@@ -5,19 +5,31 @@
     >
       <div class="flex flex-col justify-between h-full">
         <div>
-          <img class="mx-auto h-[36px] mb-[30px]" src="../assets/img/logo-2.svg" alt="" />
+          <img
+            class="mx-auto h-[36px] mb-[30px]"
+            src="../assets/img/logo-2.svg"
+            alt=""
+          />
           <nav>
             <ul>
               <li>
                 <a class="py-4 flex items-center gap-2" href="">
-                  <span class="text-[#00A19B] material-icons text-[20px]">{{ CommonConsts.sidebar.employeeIcon }}</span>
-                  <span class="text-[#00A19B] font-bold font-['Manrope'] text-sm">{{ CommonConsts.sidebar.employee }}</span>
+                  <span class="text-[#00A19B] material-icons text-[20px]">{{
+                    CommonConsts.sidebar.employeeIcon
+                  }}</span>
+                  <span
+                    class="text-[#00A19B] font-bold font-['Manrope'] text-sm"
+                    >{{ CommonConsts.sidebar.employee }}</span
+                  >
                 </a>
               </li>
               <li>
                 <a class="py-4 flex items-center gap-2" href="">
-                  <span class="text-[#A0AEC0] material-icons text-[20px]">{{ CommonConsts.sidebar.recruitmentIcon }}</span>
-                  <span class="text-[#111827] font-bold font-['Manrope'] text-sm"
+                  <span class="text-[#A0AEC0] material-icons text-[20px]">{{
+                    CommonConsts.sidebar.recruitmentIcon
+                  }}</span>
+                  <span
+                    class="text-[#111827] font-bold font-['Manrope'] text-sm"
                     >{{ CommonConsts.sidebar.recruitment }}</span
                   >
                 </a>
@@ -42,17 +54,18 @@
 import router from '@/router';
 import { useAuthStore } from '../stores/authStore';
 import CommonConsts from '@/constants';
+import { ref, inject } from 'vue';
 
-const store = useAuthStore();
+interface AuthStoreType {
+  clearToken: () => void;
+}
 
+const store: AuthStoreType = inject('authStore') as AuthStoreType || useAuthStore();
 
-  const closeSession = () => { 
-    // sessionStorage.clear();
-    store.clearToken();
-    router.push('/');
-  }
+const closeSession = () => { 
+  store.clearToken();
+  router.push('/');
+}
 </script>
 
-<style>
-
-</style>
+<style></style>

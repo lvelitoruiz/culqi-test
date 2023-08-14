@@ -12,9 +12,19 @@
   
 <script setup lang="ts">
 
+import { inject } from 'vue';
 import { useAuthStore } from '../stores/authStore';
 
-const authStore = useAuthStore();
+interface AuthStoreType {
+  user: string;
+}
+
+// const authStore = useAuthStore();
+
+const injectedAuthStore: AuthStoreType | null = inject('authStore',null);
+
+const authStore = injectedAuthStore ? injectedAuthStore : useAuthStore();
+
 let brev: string;
 
 const getFirstLetters = (input: string): string => {
